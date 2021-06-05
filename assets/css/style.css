@@ -1,0 +1,619 @@
+/***EVALUTION SUR UN PROJET ****/
+ /**  rem est une unité qui agit comme le em mais qui résoud le précédent prolème de
+  l'héritage (rem = root em). 
+    Il ne se base pas sur l'élément parent pour obtenir sa taille 
+  mais sur l'élément racine**/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&400&500&600display=swap');
+
+body {
+  font-family: "Roboto", "Sans serif";
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  display: grid;
+  align-items: center;
+  max-width: 1440px;
+  margin: auto;
+}
+
+/** grid-area permet de définir la taille d'un objet 
+de la grille et son emplacement via les bords de sa zone de grille.**/
+.logo {
+  grid-area: logo;
+  padding: 0 2rem;
+  height: 2.813rem;
+}
+
+.barreNav {
+  display: flex;
+  align-items: center;
+  grid-area: navbar;
+}
+
+.lien {
+  padding: 2rem;
+  font-weight: 500;
+  text-align: center;
+  transition-duration: 0.1s;
+  border-top: 3px transparent solid;
+  border-bottom: 3px transparent solid;
+}
+/** Nous allons utilisé pour  pseudo-classe :active permet de cibler un élément 
+lorsque celui-ci est activé par l'utilisateur***/
+.lien[data-active=true] {
+  color: #0065FC;
+}
+
+.lien:hover {
+  color: #0065FC;
+}
+
+.liensIncrire {
+  display: flex;
+  align-items: center;
+  grid-area: button;
+  padding: 2rem;
+  color: #0065FC;
+  font-weight: 600;
+}
+
+
+/*Notre container 
+ Nous allons disposer nos éléments avec border-radius: 1rem 0 0 1rem
+ , box-sizing: border-box définit la façon dont la hauteur et la 
+ largeur totale d'un éléments parents
+*/
+.container {
+    margin: auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .titreSearch {
+    margin-bottom: 0.5rem;
+  }
+
+  .sousTitreSearch {
+    margin-top: 0;
+  }
+
+  .formaulairesearch {
+    display: inline-flex;
+    max-width: 100%;
+    overflow: auto;
+  }
+
+  .iconRecherche {
+    background-color: #F2F2F2;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem 0 0 1rem;
+    text-align: center;
+  }
+
+  .iconRecherche {
+    margin-left: 0.1rem;
+  }
+
+  .formulaireRecherche {
+    border-right: none;
+    border-left: none;
+    border-top: #F2F2F2 1px solid;
+    border-bottom: #F2F2F2 1px solid;
+    padding: 0 1.5rem;
+    box-sizing: border-box;/*La propriété CSS box-sizing définit la façon dont la hauteur et la largeur totale d'un élément est calculée*/
+    width: 14rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: "Roboto", "Sans serif";
+  }
+
+  .buttonSearch {
+    background-color: #0065FC;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 1rem 1rem 0;
+    padding: 0 1.5rem;
+    font-family: "Roboto", "Sans serif";
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+.searchFilters {
+  display: flex;
+  margin-top: 2rem;
+  flex-wrap: wrap;/*La propriété flex-wrap indique si les éléments 
+  flexibles sont contraints à être disposés 
+  sur une seule ligne ou s'ils peuvent être affichés sur plusieurs lignes avec un retour automatique*/
+}
+
+.searchFiltersTitle {
+  margin: 0 2rem 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.searchFiltersFilter {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  border: 2px solid #d9d9d9;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.searchFiltersFilter:last-child {
+  margin-right: 0;
+}
+
+.searchFiltersFilterWrapicon {
+  background-color: #DEEBFF;
+  border-radius: 100%;
+  height: 3rem;
+  width: 3rem;
+  min-height: 3.5rem;/* pour empecher valeur de la propriété height de devenir inférieure à la valeur spécifiée par min-heigth*/
+  min-width: 3.5rem;/* pour empecher valeur de la propriété width de devenir inférieure à la valeur spécifiée par min-width*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -2px;
+}
+
+.searchFiltersFilterWrapiconIcon {
+  color: blue;
+}
+
+.searchFiltersFilterTitle {
+  margin: 0 1rem;
+}
+
+.searchResult {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0 2rem 0;
+}
+
+.searchResultWrapicon {
+  height: 2rem;
+  width: 2rem;
+  min-height: 2rem;/* pour empecher valeur de la propriété height de devenir inférieure à la valeur spécifiée par min-heigth*/
+  min-width: 2rem;/* pour empecher valeur de la propriété width de devenir inférieure à la valeur spécifiée par min-width*/
+  border: solid 1px #d9d9d9;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.searchResultWrapiconIcon {
+  color: #0065FC;
+}
+
+.searchResultText {
+  margin: 0;
+}
+
+
+.hostingWrapper, .PopularArticle, .hostingMain {
+  background-color: #F2F2F2;
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.hosting {
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: 6fr 3fr;
+}
+
+.hostingMain {
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.hostingMainHeader {
+  grid-column: 1/-1;
+}
+
+.hostingMainHeaderTitle {
+  margin: 0;
+}
+
+.MainCard {
+  background-color: white;
+  padding: 0.375rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 16px #0000002e;
+  transition-duration: 0.1s;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.hostingMainCardFigure {
+  margin: 0;
+}
+
+.hostingMainCardFigureImg {
+  height: 7rem;
+  object-fit: cover;
+  max-width: 100%;/* pour empecher valeur de la propriété width de devenir supérieure à la valeur spécifiée par min-width*/
+  width: 100%;
+  max-height: 100%;/* pour empecher valeur de la propriété height de devenir superieur à la valeur spécifiée par max-heigth*/
+  border-radius: 1rem 1rem 0 0;
+}
+
+.MainCardFigureCaptionTitre {
+  margin: 0.25rem 0.75rem 0 0.75rem;
+}
+
+.descriptionCard {
+  margin: 0.25rem 0.75rem 0.25rem 0.75rem;
+}
+
+.MainCardDescPrice {
+  font-weight: bold;
+}
+
+.hostingMainCardGrade {
+  margin: 0 0.75rem 0.25rem 0.75rem;
+}
+
+.hostingMainCardGradeIcon[data-active=true] {
+  color: #0065FC;
+}
+
+.hostingMainCardGradeIcon[data-active=false] {
+  color: #d9d9d9;
+}
+
+.hostingMainViewmore {
+  font-weight: bold;
+}
+
+
+/**Notre Bloc  Pour les Articles Populaires  **/
+
+.PopularArticle {
+  display: grid;
+  row-gap: 2rem;
+  align-items: start;
+  grid-template-rows: auto repeat(3, 1fr);
+}
+
+.hostingPopularTitle {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hostingPopularWrapcontent {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  overflow: auto;
+  background: white;
+}
+
+.hostingPopularWrapcontentWrapimg {
+  position: relative;
+  min-height: 100%;/* pour empecher valeur de la propriété height de devenir inférieure à la valeur spécifiée par min-heigth*/
+  width: 33%;
+  min-width: 33%;/* pour empecher valeur de la propriété width de devenir inférieure à la valeur spécifiée par min-width*/
+  max-width: 33%;/* pour empecher valeur de la propriété width de devenir superieure à la valeur spécifiée par min-width*/
+}
+
+.hostingPopularWrapcontentWrapimgImg {
+  border-radius: 1rem 0 0 1rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hostingPopularWrapcontentContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.hostingPopularWrapcontentContentWhitespace {
+  flex: 1;
+}
+
+.hostingPopularhostingMainCard {
+  height: 8.75rem;
+}
+
+/* /** grid-template-columns pour  définit les noms des lignes et les fonctions de taille*/
+.hostingMain {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.activity {
+  display: grid;
+  column-gap: 2rem;
+  margin: 4rem 0;
+}
+
+.activityTitle {
+  grid-column: 1/-1;
+}
+
+.activityCard {
+  box-shadow: 0 0 20px #0000002e;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.activityCardWrapimg {
+  position: relative;
+  flex: 1;
+}
+
+.activityCardWrapimgImg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.activityCardTitle {
+  margin: 1.2rem 1.5rem;
+}
+
+
+
+
+
+.footer {
+  background-color: #F2F2F2;
+  width: 100%;
+}
+
+.footerColumnwrapper {
+  display: flex;
+  max-width: 100%;
+  width: 1440px;
+  margin: auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.footerColumnwrapperColumn {
+  width: 30%;
+  padding: 2rem 2rem;
+}
+
+.footerColumnwrapperColumnLink {
+  display: block;
+  margin: 1rem 0;
+}
+
+.footerColumnwrapperColumnLink:hover {
+  text-decoration: underline;
+}
+
+
+/* Notre design Responsible Commence  ici**/
+
+/*mode Tablette*/
+@media screen and(min-width: 650px) and (max-width: 925px) {
+  .hostingMain {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .hostingMain {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .PopularArticle{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(3, 9rem);
+  }
+}
+
+
+@media (min-width: 1100px) {
+
+  .activity {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 14rem 2rem 2rem 2rem 14rem;
+  }
+
+  .activityCard1 {
+    grid-row: 2/7;
+    grid-column: 1/2;
+  }
+
+  .activityCard2 {
+    grid-column: 2/3;
+    grid-row: 2/5;
+  }
+
+  .activityCard3 {
+    grid-column: 3/4;
+    grid-row: 2/7;
+  }
+
+  .activityCard4 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+  }
+
+  .activityCard5 {
+    grid-column: 2/3;
+    grid-row: 6/7;
+  }
+
+  .activityCard6 {
+    grid-column: 4/5;
+    grid-row: 4/7;
+  }
+
+}
+
+
+
+@media screen and (max-width: 925px) and (max-width: 750px) {
+
+  .activity {
+    row-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 12rem 12rem 12rem;
+  }
+
+  .activity {
+    row-gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 12rem 12rem 12rem 12rem 12rem 12rem;
+  }
+
+  .PopularArticle {
+    display: none;
+  }
+  
+}
+
+
+
+
+@media screen and (min-width: 600px) {
+
+  .header {
+      /**La propriété grid-template-columns définit les noms des lignes 
+      et les fonctions de taille (track sizing) pour les colonnes de la grille**/
+    grid-template-columns: auto 1fr auto auto;/**auto :
+    Un mot-clé qui est identique au contenu maximal si c'est un maximum.
+     Si c'est un minimum, il représente la plus grande des plus petites tailles (définie par min-width/min-height))
+    des objets de la grilles qui occupe cette piste de la grille***/
+    grid-template-areas: "logo . navbar button";
+    /**La propriété grid-template-areas permet de définir des zones de grille nommées.…
+    …grid-area.***/
+  }
+    /**sélecteurs d'attributs en CSS 
+    [data-active=true]
+      permet de fournir un feedback indiquant 
+      que l'activation a bien été détectée par le navigateur
+    **/
+  .lien[data-active=true] {
+    border-top: 20px solid #0065FC;
+  }
+
+  .lien:hover {
+    border-top: 20px solid #0065FC;
+  }
+
+}
+
+/**Mobile media apparence  */
+@media screen and (max-width: 600px) {
+  .header {
+      /**La propriété grid-template-columns définit les noms des lignes 
+      et les fonctions de taille (track sizing) pour les colonnes de la grille.*/
+    grid-template-columns: auto 1fr auto;
+    /**auto :
+    Un mot-clé qui est identique au contenu maximal si c'est un maximum.
+     Si c'est un minimum, il représente la plus grande des plus petites tailles (définie par min-width/min-height))
+    des objets de la grilles qui occupe cette piste de la grille***/
+    grid-template-areas: "logo . button" "navbar navbar navbar";
+    /**La propriété grid-template-areas permet de définir des zones de grille nommées.…
+        …grid-area.***/
+  
+
+  }
+  /**La propriété CSS order permet de spécifier 
+  l'ordre d'affichage visuel d'un élément flexible Css ou grille**/
+    /*1*/
+  .logo {
+      order: 0;
+    }
+  /*2*/
+    .headerSignup {
+      order: 1;
+    }
+  /*3*/
+    .barreNav {
+      order: 2;
+    }
+
+    .lien {
+      border-top: none;
+      border-bottom: 3px solid #F2F2F2;
+      width: 50%;
+    }
+    
+  /** Nous allons utilisé pour  pseudo-classe :active permet de cibler un élément 
+  lorsque celui-ci est activé par l'utilisateur***/
+    .lien[data-active=true] {
+      border-bottom-color: #0065FC;
+    }
+
+    .lien:hover {
+      border-bottom-color: #0065FC;
+    }
+    .searchForm {
+      display: flex;
+      width: 100%;
+    }
+
+    .searchFormSearchinput {
+      flex: 1;
+    }
+
+    .searchFormSubmitinputText {
+      display: none;
+    }
+
+    .searchFormSubmitinputIcon {
+      display: block;
+    }
+
+
+
+  }
+
+ @media (max-width: 750px) {
+    .footerColumnwrapper {
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .footerColumnwrapperColumn {
+      width: 100%;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .footerColumnwrapperColumn:first-child {
+      margin-top: 0;
+    }
+
+    .footerColumnwrapperColumn:last-child {
+      margin-bottom: 0;
+    }
+
+    .footerColumnwrapperColumnTitle {
+      margin: 0;
+    }
+
+    .footerColumnwrapperColumnLink:last-child {
+      margin-bottom: 0;
+    }
+
+}
