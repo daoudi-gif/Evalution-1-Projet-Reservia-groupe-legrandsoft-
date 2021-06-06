@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Reservia||PageDeConfirmation</title>
+</head>
+<body>
+
+    <!--Notre header commence ici! Dans le cadre de notre Evalution 
+        Ce site intergre la technologie bootstrap 5
+    -->
+    <header class="header">
+        <img class="logo" src="assets/images/logo/Reservia@3x.png" alt="Reservia">
+        <nav class="barreNav">
+          <a class="lien" href="#" data-active="true">Hébergement</a>
+          <a class="lien" href="#" data-active="false">Activités</a>
+        </nav>
+        <a class="liensIncrire" href="#">S'inscrire</a>
+      </header> 
+    <!--Notre  header se termine là!-->
+      
+    <section class="container mt-5">
+        <div class="h1 text-center mb-2">
+            CONTENU DE VOTRE PANIER
+        </div>
+        <div class="">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                  <tr>
+                    <th scope="col">Numerotation</th>
+                    <th scope="col">Article</th>
+                    <th scope="col">Prix</th>
+                  </tr>
+                </thead>
+                <tbody class="table-light">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Chambre</td>
+                    <td>150.000CFA</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>contrat de bails</td>
+                    <td>Null</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </section>
+    <main class="container  mt-5 py-3 pb-5  bg-danger">
+        <div class="row">
+            <div class="col">
+               <strong><h1  class="text-center text-light">Veillez Confirmer votre Achat </h1></strong> 
+            </div>
+        </div>
+    </main>
+    <div class="container py-3 px-5 bg-secondary text-light text-center btn-Confirme">
+        Prix TOTAL : 150.000XFA
+        <a  class="btn btn-warning rounded-pill" onclick="Confirmation()" href="#"> Je Confirme</a>
+    </div>
+    <!--  fin de notre conteneur main -->
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="assets/js/mainJS.js"></script>
+</html>
